@@ -4,21 +4,21 @@ import { motion } from "framer-motion";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50 to-orange-50">
+    <div className="min-h-screen">
       <div className="absolute inset-0 hero-pattern" />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4">
+      <section className="relative min-h-screen flex items-center justify-center px-4 hero-section">
         <div className="container mx-auto text-center z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-6xl md:text-7xl font-bold text-primary mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
               Sr. Boteco
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
               Um lugar acolhedor onde cada momento se transforma em uma memória especial
             </p>
             <button className="bg-primary text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors">
@@ -29,7 +29,7 @@ const Index = () => {
       </section>
 
       {/* Sobre Section */}
-      <section className="py-20 relative">
+      <section className="py-20 relative bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0 }}
@@ -41,13 +41,22 @@ const Index = () => {
             <h2 className="text-4xl font-bold text-center mb-12 text-primary">
               Sobre o Sr. Boteco
             </h2>
-            <div className="glass-card p-8 rounded-2xl">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Desde 2010, o Sr. Boteco tem sido mais que um simples bar - é um ponto de encontro 
-                onde amigos se reúnem, histórias são compartilhadas e momentos inesquecíveis são 
-                criados. Nossa missão é oferecer não apenas bebidas e petiscos de qualidade, mas 
-                uma experiência genuína de boteco tradicional com um toque de modernidade.
-              </p>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="rounded-2xl overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1074" 
+                  alt="Ambiente do Sr. Boteco" 
+                  className="w-full h-64 object-cover"
+                />
+              </div>
+              <div className="glass-card p-8 rounded-2xl">
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Desde 2010, o Sr. Boteco tem sido mais que um simples bar - é um ponto de encontro 
+                  onde amigos se reúnem, histórias são compartilhadas e momentos inesquecíveis são 
+                  criados. Nossa missão é oferecer não apenas bebidas e petiscos de qualidade, mas 
+                  uma experiência genuína de boteco tradicional com um toque de modernidade.
+                </p>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -67,19 +76,73 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="glass-card p-6 rounded-xl hover:shadow-2xl transition-shadow"
+                className="menu-card p-6 rounded-xl hover:shadow-2xl transition-all"
+                style={{
+                  backgroundImage: `url(${item.image})`
+                }}
               >
-                <h3 className="text-xl font-semibold mb-2">{item.name}</h3>
-                <p className="text-gray-600 mb-4">{item.description}</p>
-                <p className="text-primary font-bold">R$ {item.price.toFixed(2)}</p>
+                <div className="glass-card p-6 rounded-xl backdrop-blur-sm">
+                  <h3 className="text-xl font-semibold mb-2 text-white">{item.name}</h3>
+                  <p className="text-white/90 mb-4">{item.description}</p>
+                  <p className="text-white font-bold text-xl">R$ {item.price.toFixed(2)}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Galeria de Fotos */}
+      <section className="py-20 bg-white relative">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+            Nosso Ambiente
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              className="rounded-xl overflow-hidden h-64"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1538488881038-e252a119ace7?q=80&w=1000" 
+                alt="Ambiente interno"
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="rounded-xl overflow-hidden h-64"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=1000" 
+                alt="Bar"
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+              />
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="rounded-xl overflow-hidden h-64"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=1000" 
+                alt="Área externa"
+                className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Informações de Contato */}
-      <section className="py-20 relative">
+      <section className="py-20 relative bg-gradient-to-b from-secondary/20 to-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center mb-12 text-primary">
             Visite-nos
@@ -90,7 +153,7 @@ const Index = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="glass-card p-6 rounded-xl text-center"
+              className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform"
             >
               <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Endereço</h3>
@@ -102,7 +165,7 @@ const Index = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="glass-card p-6 rounded-xl text-center"
+              className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform"
             >
               <Clock className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Horário</h3>
@@ -114,7 +177,7 @@ const Index = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="glass-card p-6 rounded-xl text-center"
+              className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform"
             >
               <Phone className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Contato</h3>
@@ -140,32 +203,38 @@ const menuItems = [
   {
     name: "Pastel de Carne",
     description: "Massa crocante recheada com carne moída temperada",
-    price: 8.90
+    price: 8.90,
+    image: "https://images.unsplash.com/photo-1604467715878-83e57e8bc129?q=80&w=1000"
   },
   {
     name: "Bolinho de Bacalhau",
     description: "Bolinhos dourados de bacalhau, receita portuguesa",
-    price: 12.90
+    price: 12.90,
+    image: "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?q=80&w=1000"
   },
   {
     name: "Caipirinha",
     description: "Limão, açúcar e cachaça artesanal",
-    price: 14.90
+    price: 14.90,
+    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1000"
   },
   {
     name: "Chopp Artesanal",
     description: "Chopp gelado direto do barril",
-    price: 12.90
+    price: 12.90,
+    image: "https://images.unsplash.com/photo-1600788886242-5c96aabe3757?q=80&w=1000"
   },
   {
     name: "Porção de Calabresa",
     description: "Calabresa acebolada com farofa",
-    price: 24.90
+    price: 24.90,
+    image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000"
   },
   {
     name: "Porção de Fritas",
     description: "Batatas fritas crocantes com molho especial",
-    price: 19.90
+    price: 19.90,
+    image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?q=80&w=1000"
   }
 ];
 
