@@ -1,4 +1,3 @@
-
 import { Beer, MapPin, Clock, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -183,6 +182,26 @@ const Index = () => {
               <h3 className="text-lg font-semibold mb-2">Contato</h3>
               <p className="text-gray-600">(11) 99999-9999<br />contato@srboteco.com</p>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Iframe Section */}
+      <section className="py-20 bg-white relative">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+            Conteúdo Externo
+          </h2>
+          <div className="w-full aspect-video rounded-xl overflow-hidden shadow-xl">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.1975707768866!2d-46.6526887!3d-23.5635609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0x63b9f0c132467930!2sAv.%20Paulista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1709766547971!5m2!1spt-BR!2sbr"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </div>
         </div>
       </section>
