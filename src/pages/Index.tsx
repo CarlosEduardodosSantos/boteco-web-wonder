@@ -4,19 +4,6 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
-  const [isEditing, setIsEditing] = useState(false);
-  const [address, setAddress] = useState("Rua dos Botecos, 123");
-  const { toast } = useToast();
-
-  const handleAddressChange = (newAddress: string) => {
-    setAddress(newAddress);
-    setIsEditing(false);
-    toast({
-      title: "Endereço atualizado",
-      description: "O endereço foi atualizado com sucesso!",
-    });
-  };
-
   return <div className="min-h-screen">
       <div className="absolute inset-0 hero-pattern" />
       
@@ -170,9 +157,9 @@ const Index = () => {
           }} className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform">
               <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Endereço</h3>
-              <p className="text-gray-600">
+              <div className="text-gray-600">
                 Rua dos Botecos, 123<br />São Paulo, SP
-              </p>
+              </div>
             </motion.div>
             
             <motion.div initial={{
