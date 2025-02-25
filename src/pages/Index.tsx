@@ -1,10 +1,22 @@
+
 import { Beer, MapPin, Clock, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const Index = () => {
   const [isEditing, setIsEditing] = useState(false);
   const [address, setAddress] = useState("Rua dos Botecos, 123");
+  const { toast } = useToast();
+
+  const handleAddressChange = (newAddress: string) => {
+    setAddress(newAddress);
+    setIsEditing(false);
+    toast({
+      title: "Endereço atualizado",
+      description: "O endereço foi atualizado com sucesso!",
+    });
+  };
 
   return <div className="min-h-screen">
       <div className="absolute inset-0 hero-pattern" />
@@ -162,16 +174,23 @@ const Index = () => {
               {isEditing ? (
                 <input
                   type="text"
-                  value={address}
-                  onChange={(e) => setAddress(e.target.value)}
+                  defaultValue={address}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter') {
+                      handleAddressChange(e.currentTarget.value);
+                    }
+                  }}
+                  onBlur={(e) => handleAddressChange(e.target.value)}
                   className="text-gray-600 bg-white/50 p-2 rounded w-full text-center"
-                  onBlur={() => setIsEditing(false)}
                   autoFocus
                 />
               ) : (
-                <p className="text-gray-600 cursor-pointer" onClick={() => setIsEditing(true)}>
-                  {address}<br />São Paulo, SP
-                </p>
+                <div 
+                  className="text-gray-600 cursor-pointer" 
+                  onClick={() => setIsEditing(true)}
+                >
+                  <p>{address}<br />São Paulo, SP</p>
+                </div>
               )}
             </motion.div>
             
