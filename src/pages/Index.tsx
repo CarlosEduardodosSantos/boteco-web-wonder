@@ -1,6 +1,11 @@
 import { Beer, MapPin, Clock, Phone } from "lucide-react";
 import { motion } from "framer-motion";
+import { useState } from "react";
+
 const Index = () => {
+  const [isEditing, setIsEditing] = useState(false);
+  const [address, setAddress] = useState("Rua dos Botecos, 123");
+
   return <div className="min-h-screen">
       <div className="absolute inset-0 hero-pattern" />
       
@@ -154,7 +159,20 @@ const Index = () => {
           }} className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform">
               <MapPin className="w-8 h-8 text-primary mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Endereço</h3>
-              <p className="text-gray-600">Rua dos Botecos, 123<br />São Paulo, SP</p>
+              {isEditing ? (
+                <input
+                  type="text"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                  className="text-gray-600 bg-white/50 p-2 rounded w-full text-center"
+                  onBlur={() => setIsEditing(false)}
+                  autoFocus
+                />
+              ) : (
+                <p className="text-gray-600 cursor-pointer" onClick={() => setIsEditing(true)}>
+                  {address}<br />São Paulo, SP
+                </p>
+              )}
             </motion.div>
             
             <motion.div initial={{
@@ -198,6 +216,7 @@ const Index = () => {
       
     </div>;
 };
+
 const menuItems = [{
   name: "Pastel de Carne",
   description: "Massa crocante recheada com carne moída temperada",
@@ -229,4 +248,5 @@ const menuItems = [{
   price: 19.90,
   image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?q=80&w=1000"
 }];
+
 export default Index;
