@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Wine, Utensils, Music, Coffee } from "lucide-react";
 import Logo from "@/components/Logo";
@@ -51,9 +52,13 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-6xl md:text-7xl font-bold text-primary mb-6">
-            Sr. Boteco
-          </h1>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <Logo />
+            <h1 className="text-6xl md:text-7xl font-bold text-primary">
+              Sr. Boteco
+            </h1>
+          </div>
+          
           <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
             Um lugar acolhedor onde cada momento se transforma em uma memória especial
           </p>
