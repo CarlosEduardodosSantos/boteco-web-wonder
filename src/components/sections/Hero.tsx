@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Wine, Utensils, Music, Coffee } from "lucide-react";
 import Logo from "@/components/Logo";
@@ -52,15 +51,6 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
-            initial={{ scale: 1 }}
-            animate={{ scale: [1, 1.02, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="inline-block mb-6"
-          >
-            <Logo />
-          </motion.div>
-          
           <h1 className="text-6xl md:text-7xl font-bold text-primary mb-6">
             Sr. Boteco
           </h1>
@@ -86,35 +76,29 @@ const Hero = () => {
             </motion.button>
           </div>
 
-          <InfoCards />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+            <InfoCard
+              icon={Coffee}
+              title="Horário"
+              info={["Terça a Domingo", "17h às 00h"]}
+              delay={0.3}
+            />
+            <InfoCard
+              icon={Utensils}
+              title="Endereço"
+              info={["Rua dos Botecos, 123", "São Paulo, SP"]}
+              delay={0.4}
+            />
+            <InfoCard
+              icon={Music}
+              title="Contato"
+              info={["Reservas", "(11) 99999-9999"]}
+              delay={0.5}
+            />
+          </div>
         </motion.div>
       </div>
     </section>
-  );
-};
-
-const InfoCards = () => {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-      <InfoCard
-        icon={Clock}
-        title="Horário"
-        info={["Terça a Domingo", "17h às 00h"]}
-        delay={0.3}
-      />
-      <InfoCard
-        icon={MapPin}
-        title="Endereço"
-        info={["Rua dos Botecos, 123", "São Paulo, SP"]}
-        delay={0.4}
-      />
-      <InfoCard
-        icon={Phone}
-        title="Contato"
-        info={["Reservas", "(11) 99999-9999"]}
-        delay={0.5}
-      />
-    </div>
   );
 };
 
