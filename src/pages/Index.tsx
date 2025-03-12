@@ -1,5 +1,6 @@
-import { Beer, MapPin, Clock, Phone, Utensils, Music, Star } from "lucide-react";
+import { MapPin, Clock, Phone, Utensils, Music, Star } from "lucide-react";
 import { motion } from "framer-motion";
+import Logo from "@/components/Logo";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
@@ -55,7 +56,7 @@ const Index = () => {
               transition={{ duration: 2, repeat: Infinity }}
               className="inline-block mb-6"
             >
-              <Beer className="w-20 h-20 text-primary mx-auto" />
+              <Logo />
             </motion.div>
             
             <h1 className="text-6xl md:text-7xl font-bold text-primary mb-6">
@@ -326,3 +327,4 @@ const menuItems = [{
 }];
 
 export default Index;
+
