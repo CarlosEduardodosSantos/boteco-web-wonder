@@ -1,3 +1,4 @@
+
 import { Beer, MapPin, Clock, Phone } from "lucide-react";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -8,7 +9,8 @@ const Index = () => {
       <div className="absolute inset-0 hero-pattern" />
       
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center px-4 hero-section">
+      <section className="relative min-h-screen flex items-center justify-center px-4">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20" />
         <div className="container mx-auto text-center z-10">
           <motion.div initial={{
           opacity: 0,
@@ -19,10 +21,10 @@ const Index = () => {
         }} transition={{
           duration: 0.6
         }}>
-            <h1 className="text-6xl md:text-7xl font-bold text-white mb-6">
+            <h1 className="text-6xl md:text-7xl font-bold text-primary mb-6">
               Sr. Boteco
             </h1>
-            <p className="text-xl md:text-2xl text-white mb-8 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
               Um lugar acolhedor onde cada momento se transforma em uma memória especial
             </p>
             <button className="bg-primary text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors">
