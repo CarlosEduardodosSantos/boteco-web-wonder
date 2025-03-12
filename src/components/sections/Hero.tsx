@@ -51,29 +51,21 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mb-12">
+          <div className="mb-16">
             <Logo />
           </div>
           
-          <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-accent mb-8 max-w-2xl mx-auto">
             Um lugar acolhedor onde cada momento se transforma em uma memória especial
           </p>
           
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex justify-center items-center mb-12">
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-primary text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors"
             >
               Conheça nosso cardápio
-            </motion.button>
-            
-            <motion.button 
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="border-2 border-primary text-primary px-8 py-3 rounded-full text-lg font-medium hover:bg-primary/10 transition-colors"
-            >
-              Faça sua reserva
             </motion.button>
           </div>
 
