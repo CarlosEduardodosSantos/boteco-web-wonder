@@ -227,7 +227,6 @@ const Index = () => {
             >
               <img 
                 src="https://images.unsplash.com/photo-1525268323446-0505b6fe7778?q=80&w=1000"
-
                 alt="Área externa" 
                 className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
               />
@@ -334,3 +333,4 @@ const menuItems = [
 ];
 
 export default Index;
+
