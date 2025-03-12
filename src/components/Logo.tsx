@@ -6,7 +6,7 @@ const Logo = () => {
     <motion.img
       src="/lovable-uploads/1843bc8b-3185-4369-8a52-ca6eb3e7e0b0.png"
       alt="Sr. Boteco Logo"
-      className="h-36 md:h-44 w-auto mx-auto"
+      className="h-28 md:h-36 w-auto mx-auto"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
