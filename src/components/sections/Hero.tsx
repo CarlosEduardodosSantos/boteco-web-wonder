@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Wine, Utensils, Music, Coffee } from "lucide-react";
 import Logo from "@/components/Logo";
@@ -46,7 +45,7 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20" />
       <FloatingIcons />
       
-      <div className="container mx-auto text-center z-10">
+      <div className="container mx-auto text-center z-10 pt-16 md:pt-24">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
