@@ -1,4 +1,4 @@
-import { MapPin, Clock, Phone, Utensils, Music, Star } from "lucide-react";
+import { MapPin, Clock, Phone, Utensils, Music, Star, Wine, Coffee } from "lucide-react";
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { useState } from "react";
@@ -19,7 +19,7 @@ const Index = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="absolute inset-0 overflow-hidden pointer-events-none"
         >
-          {[Beer, Utensils, Music, Star].map((Icon, index) => (
+          {[Wine, Utensils, Music, Coffee].map((Icon, index) => (
             <motion.div
               key={index}
               initial={{ y: -20, opacity: 0 }}
