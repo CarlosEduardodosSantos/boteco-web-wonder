@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Wine, Utensils, Music, Coffee } from "lucide-react";
 import Logo from "@/components/Logo";
@@ -51,7 +52,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mb-16">
+          <div className="mb-12">
             <Logo />
           </div>
           
@@ -63,7 +64,7 @@ const Hero = () => {
             <motion.button 
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-primary text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors"
+              className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors"
             >
               Conheça nosso cardápio
             </motion.button>
@@ -108,11 +109,12 @@ const InfoCard = ({ icon: Icon, title, info, delay }: InfoCardProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className="glass-card p-4 rounded-xl"
+      className="glass-card p-4 rounded-xl bg-secondary"
     >
       <Icon className="w-8 h-8 text-primary mx-auto mb-2" />
-      <p className="text-gray-700">{info[0]}</p>
-      <p className="font-semibold">{info[1]}</p>
+      <h3 className="text-accent font-medium mb-2">{title}</h3>
+      <p className="text-accent/80">{info[0]}</p>
+      <p className="font-semibold text-accent">{info[1]}</p>
     </motion.div>
   );
 };
