@@ -51,11 +51,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mb-8">
+          <div className="mb-12">
             <Logo />
-            <h1 className="text-6xl md:text-7xl font-bold text-primary mt-4">
-              Sr. Boteco
-            </h1>
           </div>
           
           <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-2xl mx-auto">
