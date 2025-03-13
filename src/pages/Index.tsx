@@ -1,6 +1,4 @@
-
 import { MapPin, Clock, Phone } from "lucide-react";
-import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Menu from "@/components/sections/Menu";
@@ -11,7 +9,6 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <div className="absolute inset-0 hero-pattern" />
-      <Header />
       <main>
         <section id="home">
           <Hero />

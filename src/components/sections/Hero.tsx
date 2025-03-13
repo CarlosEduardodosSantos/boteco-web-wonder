@@ -12,10 +12,34 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 gap-8 items-center min-h-screen">
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center items-center order-2 md:order-1"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 via-transparent to-secondary/20 rounded-full blur-3xl" />
+            <div className="relative w-full max-w-md">
+              <Logo />
+              <motion.div
+                className="absolute -inset-4 border-2 border-primary/20 rounded-full"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }}
+              />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-left pt-20 md:pt-0"
+            className="text-left pt-20 md:pt-0 order-1 md:order-2"
           >
             <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
               Tradição & Sabor
@@ -58,30 +82,6 @@ const Hero = () => {
                 <Coffee className="w-5 h-5 text-primary" />
                 <span className="text-sm text-primary/80">Café Colonial</span>
               </div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative flex justify-center items-center"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 via-transparent to-secondary/20 rounded-full blur-3xl" />
-            <div className="relative w-full max-w-md">
-              <Logo />
-              <motion.div
-                className="absolute -inset-4 border-2 border-primary/20 rounded-full"
-                animate={{
-                  scale: [1, 1.05, 1],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{
-                  duration: 5,
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }}
-              />
             </div>
           </motion.div>
         </div>
