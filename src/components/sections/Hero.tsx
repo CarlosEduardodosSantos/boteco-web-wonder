@@ -1,122 +1,92 @@
 
 import { motion } from "framer-motion";
-import { Wine, Utensils, Music, Coffee } from "lucide-react";
-
-const FloatingIcons = () => {
-  const icons = [Wine, Utensils, Music, Coffee];
-  
-  return (
-    <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6, delay: 0.3 }}
-      className="absolute inset-0 overflow-hidden pointer-events-none"
-    >
-      {icons.map((Icon, index) => (
-        <motion.div
-          key={index}
-          initial={{ y: -20, opacity: 0 }}
-          animate={{ 
-            y: [0, -20, 0],
-            opacity: [0.3, 0.6, 0.3]
-          }}
-          transition={{
-            duration: 3,
-            delay: index * 0.2,
-            repeat: Infinity,
-            repeatType: "reverse"
-          }}
-          className="absolute text-primary/30"
-          style={{
-            left: `${Math.random() * 90}%`,
-            top: `${Math.random() * 90}%`
-          }}
-        >
-          <Icon size={40} />
-        </motion.div>
-      ))}
-    </motion.div>
-  );
-};
+import Logo from "@/components/Logo";
+import { Button } from "@/components/ui/button";
+import { Wine, Utensils, Coffee } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 pt-32">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/20 to-accent/10" />
-      <FloatingIcons />
+    <section className="min-h-screen bg-gradient-to-b from-secondary/20 to-white relative overflow-hidden">
+      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIGZpbGw9IiM1NDFjMWMiIGZpbGwtb3BhY2l0eT0iLjA1IiBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L3N2Zz4=')] opacity-50" />
       
-      <div className="container mx-auto text-center z-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-8">
-            Bem-vindo ao
-            <span className="block mt-2">Sr. Boteco</span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl text-accent/90 mb-12 max-w-2xl mx-auto font-medium">
-            Um lugar acolhedor onde cada momento se transforma em uma memória especial
-          </p>
-          
-          <div className="flex justify-center items-center mb-16">
-            <motion.a 
-              href="#menu"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-bold hover:bg-primary/90 transition-colors"
-            >
-              Conheça nosso cardápio
-            </motion.a>
-          </div>
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-2 gap-8 items-center min-h-screen">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-left pt-20 md:pt-0"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+              Tradição & Sabor
+              <span className="block mt-2 text-2xl md:text-3xl font-medium text-primary/80">
+                no coração da cidade
+              </span>
+            </h1>
+            
+            <p className="text-lg text-primary/70 mb-8 max-w-md">
+              Uma experiência única de boteco, onde a tradição se encontra com o conforto moderno.
+              Venha conhecer nossos pratos e drinks especiais.
+            </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <InfoCard
-              icon={Coffee}
-              title="Horário"
-              info={["Terça a Domingo", "17h às 00h"]}
-              delay={0.3}
-            />
-            <InfoCard
-              icon={Utensils}
-              title="Endereço"
-              info={["Rua dos Botecos, 123", "São Paulo, SP"]}
-              delay={0.4}
-            />
-            <InfoCard
-              icon={Music}
-              title="Contato"
-              info={["Reservas", "(11) 99999-9999"]}
-              delay={0.5}
-            />
-          </div>
-        </motion.div>
+            <div className="flex gap-4 items-center">
+              <Button
+                asChild
+                className="bg-primary hover:bg-primary/90 text-white px-8"
+              >
+                <a href="#menu">Ver Cardápio</a>
+              </Button>
+              <Button
+                asChild
+                variant="outline"
+                className="border-primary text-primary hover:bg-primary/10"
+              >
+                <a href="#contact">Fazer Reserva</a>
+              </Button>
+            </div>
+
+            <div className="flex gap-8 mt-12">
+              <div className="flex items-center gap-2">
+                <Wine className="w-5 h-5 text-primary" />
+                <span className="text-sm text-primary/80">Drinks Especiais</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Utensils className="w-5 h-5 text-primary" />
+                <span className="text-sm text-primary/80">Petiscos</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Coffee className="w-5 h-5 text-primary" />
+                <span className="text-sm text-primary/80">Café Colonial</span>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8 }}
+            className="relative flex justify-center items-center"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-secondary/20 via-transparent to-secondary/20 rounded-full blur-3xl" />
+            <div className="relative w-full max-w-md">
+              <Logo />
+              <motion.div
+                className="absolute -inset-4 border-2 border-primary/20 rounded-full"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  repeatType: "reverse"
+                }}
+              />
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
-  );
-};
-
-interface InfoCardProps {
-  icon: React.ElementType;
-  title: string;
-  info: [string, string];
-  delay: number;
-}
-
-const InfoCard = ({ icon: Icon, title, info, delay }: InfoCardProps) => {
-  return (
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ delay }}
-      className="glass-card p-6 rounded-2xl bg-secondary/50 hover:bg-secondary/60 transition-colors"
-    >
-      <Icon className="w-8 h-8 text-primary mx-auto mb-4" />
-      <h3 className="text-primary font-bold text-lg mb-2">{title}</h3>
-      <p className="text-accent/90">{info[0]}</p>
-      <p className="font-bold text-accent">{info[1]}</p>
-    </motion.div>
   );
 };
 
