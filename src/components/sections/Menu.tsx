@@ -9,42 +9,42 @@ interface MenuItem {
   icon: "wine" | "coffee" | "utensils";
 }
 
-const menuItems = [
+const menuItems: MenuItem[] = [
   {
     name: "Pastel de Carne",
     description: "Massa crocante recheada com carne moída temperada",
     price: 8.90,
-    icon: "utensils"
+    icon: "utensils" as const
   },
   {
     name: "Bolinho de Bacalhau",
     description: "Bolinhos dourados de bacalhau, receita portuguesa",
     price: 12.90,
-    icon: "utensils"
+    icon: "utensils" as const
   },
   {
     name: "Caipirinha",
     description: "Limão, açúcar e cachaça artesanal",
     price: 14.90,
-    icon: "wine"
+    icon: "wine" as const
   },
   {
     name: "Chopp Artesanal",
     description: "Chopp gelado direto do barril",
     price: 12.90,
-    icon: "wine"
+    icon: "wine" as const
   },
   {
     name: "Porção de Calabresa",
     description: "Calabresa acebolada com farofa",
     price: 24.90,
-    icon: "utensils"
+    icon: "utensils" as const
   },
   {
     name: "Café Colonial",
     description: "Café especial com quitutes tradicionais",
     price: 19.90,
-    icon: "coffee"
+    icon: "coffee" as const
   }
 ];
 
