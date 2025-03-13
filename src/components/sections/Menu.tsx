@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 
 interface MenuItem {
@@ -54,10 +53,10 @@ const MenuCard = ({ item, index }: { item: MenuItem; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="menu-card p-6 rounded-xl hover:shadow-2xl transition-all"
+      className="menu-card p-6 rounded-xl hover:shadow-2xl transition-all relative"
       style={{ backgroundImage: `url(${item.image})` }}
     >
-      <div className="glass-card p-6 rounded-xl backdrop-blur-sm">
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 backdrop-blur-sm rounded-b-xl">
         <h3 className="text-xl font-semibold mb-2 text-white">{item.name}</h3>
         <p className="text-white/90 mb-4">{item.description}</p>
         <p className="text-white font-bold text-xl">R$ {item.price.toFixed(2)}</p>
