@@ -41,19 +41,19 @@ const FloatingIcons = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4">
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-24">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20" />
       <FloatingIcons />
       
-      <div className="container mx-auto text-center z-10 pt-16 md:pt-24">
+      <div className="container mx-auto text-center z-10">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <div className="mb-12">
-            <Logo />
-          </div>
+          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+            Bem-vindo ao Sr. Boteco
+          </h1>
           
           <p className="text-xl md:text-2xl text-accent mb-8 max-w-2xl mx-auto">
             Um lugar acolhedor onde cada momento se transforma em uma memória especial
