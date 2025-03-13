@@ -13,9 +13,9 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-secondary/80 backdrop-blur-sm z-50 py-4">
+    <header className="fixed top-0 left-0 right-0 bg-secondary/80 backdrop-blur-sm z-50">
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <div className="w-32">
+        <div className="w-32 md:w-40">
           <Logo />
         </div>
         
@@ -30,7 +30,7 @@ const Header = () => {
                 <a
                   href={item.href}
                   className={cn(
-                    "text-primary font-medium hover:text-primary/80 transition-colors",
+                    "text-primary font-bold text-lg hover:text-primary/80 transition-colors",
                     "relative after:content-[''] after:absolute after:w-full after:scale-x-0",
                     "after:h-0.5 after:bottom-0 after:left-0 after:bg-primary",
                     "after:origin-bottom-right after:transition-transform after:duration-300",

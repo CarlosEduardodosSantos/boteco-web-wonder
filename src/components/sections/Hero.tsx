@@ -1,6 +1,6 @@
+
 import { motion } from "framer-motion";
 import { Wine, Utensils, Music, Coffee } from "lucide-react";
-import Logo from "@/components/Logo";
 
 const FloatingIcons = () => {
   const icons = [Wine, Utensils, Music, Coffee];
@@ -41,8 +41,8 @@ const FloatingIcons = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 pt-24">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/30 to-accent/20" />
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-32">
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-secondary/20 to-accent/10" />
       <FloatingIcons />
       
       <div className="container mx-auto text-center z-10">
@@ -51,25 +51,27 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
-            Bem-vindo ao Sr. Boteco
+          <h1 className="text-5xl md:text-7xl font-bold text-primary mb-8">
+            Bem-vindo ao
+            <span className="block mt-2">Sr. Boteco</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-accent mb-8 max-w-2xl mx-auto">
+          <p className="text-xl md:text-2xl text-accent/90 mb-12 max-w-2xl mx-auto font-medium">
             Um lugar acolhedor onde cada momento se transforma em uma memória especial
           </p>
           
-          <div className="flex justify-center items-center mb-12">
-            <motion.button 
+          <div className="flex justify-center items-center mb-16">
+            <motion.a 
+              href="#menu"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="bg-primary text-primary-foreground px-8 py-3 rounded-full text-lg font-medium hover:bg-primary/90 transition-colors"
+              className="bg-primary text-primary-foreground px-8 py-4 rounded-full text-lg font-bold hover:bg-primary/90 transition-colors"
             >
               Conheça nosso cardápio
-            </motion.button>
+            </motion.a>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <InfoCard
               icon={Coffee}
               title="Horário"
@@ -108,12 +110,12 @@ const InfoCard = ({ icon: Icon, title, info, delay }: InfoCardProps) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className="glass-card p-4 rounded-xl bg-secondary"
+      className="glass-card p-6 rounded-2xl bg-secondary/50 hover:bg-secondary/60 transition-colors"
     >
-      <Icon className="w-8 h-8 text-primary mx-auto mb-2" />
-      <h3 className="text-accent font-medium mb-2">{title}</h3>
-      <p className="text-accent/80">{info[0]}</p>
-      <p className="font-semibold text-accent">{info[1]}</p>
+      <Icon className="w-8 h-8 text-primary mx-auto mb-4" />
+      <h3 className="text-primary font-bold text-lg mb-2">{title}</h3>
+      <p className="text-accent/90">{info[0]}</p>
+      <p className="font-bold text-accent">{info[1]}</p>
     </motion.div>
   );
 };
