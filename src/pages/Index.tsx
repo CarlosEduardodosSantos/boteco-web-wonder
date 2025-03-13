@@ -1,7 +1,8 @@
+
 import { MapPin, Clock, Phone } from "lucide-react";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
-import Menu from "@/components/sections/Menu";
+import Features from "@/components/sections/Features";
 import Gallery from "@/components/sections/Gallery";
 import Contact from "@/components/sections/Contact";
 
@@ -16,8 +17,8 @@ const Index = () => {
         <section id="about">
           <About />
         </section>
-        <section id="menu">
-          <Menu />
+        <section id="features">
+          <Features />
         </section>
         <section id="gallery">
           <Gallery />
