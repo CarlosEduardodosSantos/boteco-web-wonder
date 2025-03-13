@@ -1,10 +1,12 @@
+
 import { motion } from "framer-motion";
+import { Wine, Coffee, Utensils } from "lucide-react";
 
 interface MenuItem {
   name: string;
   description: string;
   price: number;
-  image: string;
+  icon: "wine" | "coffee" | "utensils";
 }
 
 const menuItems = [
@@ -12,39 +14,50 @@ const menuItems = [
     name: "Pastel de Carne",
     description: "Massa crocante recheada com carne moída temperada",
     price: 8.90,
-    image: "https://images.unsplash.com/photo-1604467715878-83e57e8bc129?q=80&w=1000"
+    icon: "utensils"
   },
   {
     name: "Bolinho de Bacalhau",
     description: "Bolinhos dourados de bacalhau, receita portuguesa",
     price: 12.90,
-    image: "https://images.unsplash.com/photo-1504544750208-dc0358e63f7f?q=80&w=1000"
+    icon: "utensils"
   },
   {
     name: "Caipirinha",
     description: "Limão, açúcar e cachaça artesanal",
     price: 14.90,
-    image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=1000"
+    icon: "wine"
   },
   {
     name: "Chopp Artesanal",
     description: "Chopp gelado direto do barril",
     price: 12.90,
-    image: "https://images.unsplash.com/photo-1600788886242-5c96aabe3757?q=80&w=1000"
+    icon: "wine"
   },
   {
     name: "Porção de Calabresa",
     description: "Calabresa acebolada com farofa",
     price: 24.90,
-    image: "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1000"
+    icon: "utensils"
   },
   {
-    name: "Porção de Fritas",
-    description: "Batatas fritas crocantes com molho especial",
+    name: "Café Colonial",
+    description: "Café especial com quitutes tradicionais",
     price: 19.90,
-    image: "https://images.unsplash.com/photo-1630384060421-cb20d0e0649d?q=80&w=1000"
+    icon: "coffee"
   }
 ];
+
+const getIcon = (iconName: MenuItem["icon"]) => {
+  switch (iconName) {
+    case "wine":
+      return <Wine className="w-8 h-8" />;
+    case "coffee":
+      return <Coffee className="w-8 h-8" />;
+    case "utensils":
+      return <Utensils className="w-8 h-8" />;
+  }
+};
 
 const MenuCard = ({ item, index }: { item: MenuItem; index: number }) => {
   return (
@@ -53,13 +66,17 @@ const MenuCard = ({ item, index }: { item: MenuItem; index: number }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="menu-card p-6 rounded-xl hover:shadow-2xl transition-all relative"
-      style={{ backgroundImage: `url(${item.image})` }}
+      className="group relative p-6 rounded-xl hover:shadow-2xl transition-all bg-gradient-to-br from-secondary/20 to-secondary/5 hover:from-secondary/30 hover:to-secondary/10 border border-secondary/20"
     >
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-black/50 backdrop-blur-sm rounded-b-xl">
-        <h3 className="text-xl font-semibold mb-2 text-white">{item.name}</h3>
-        <p className="text-white/90 mb-4">{item.description}</p>
-        <p className="text-white font-bold text-xl">R$ {item.price.toFixed(2)}</p>
+      <div className="flex items-start gap-4">
+        <div className="p-3 rounded-lg bg-primary/5 text-primary group-hover:scale-110 transition-transform">
+          {getIcon(item.icon)}
+        </div>
+        <div className="flex-1">
+          <h3 className="text-xl font-semibold mb-2 text-primary">{item.name}</h3>
+          <p className="text-primary/70 mb-4">{item.description}</p>
+          <p className="text-primary font-bold text-xl">R$ {item.price.toFixed(2)}</p>
+        </div>
       </div>
     </motion.div>
   );
@@ -67,8 +84,9 @@ const MenuCard = ({ item, index }: { item: MenuItem; index: number }) => {
 
 const Menu = () => {
   return (
-    <section className="py-20 bg-secondary/20 relative">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-gradient-to-b from-secondary/20 to-transparent" />
+      <div className="container mx-auto px-4 relative">
         <h2 className="text-4xl font-bold text-center mb-12 text-primary">
           Menu em Destaque
         </h2>

@@ -27,10 +27,30 @@
 
 .hero-pattern {
   background-color: #ffffff;
-  background-image: radial-gradient(#d4a373 0.5px, transparent 0.5px), radial-gradient(#d4a373 0.5px, #ffffff 0.5px);
+  background-image: 
+    radial-gradient(#d4a373 0.5px, transparent 0.5px),
+    radial-gradient(#d4a373 0.5px, #ffffff 0.5px);
   background-size: 20px 20px;
-  background-position: 0 0,10px 10px;
+  background-position: 0 0, 10px 10px;
   opacity: 0.1;
+}
+
+.menu-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    linear-gradient(45deg, rgba(230,199,175,0.1) 0%, rgba(230,199,175,0) 100%),
+    radial-gradient(circle at top right, rgba(230,199,175,0.1) 0%, rgba(230,199,175,0) 70%);
+  pointer-events: none;
 }
 
 .menu-card {
