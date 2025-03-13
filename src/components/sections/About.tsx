@@ -1,27 +1,22 @@
-
 import { motion } from "framer-motion";
-
 const About = () => {
-  return (
-    <section className="py-20 relative bg-white">
+  return <section className="py-20 relative bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="max-w-4xl mx-auto"
-        >
+        <motion.div initial={{
+        opacity: 0
+      }} whileInView={{
+        opacity: 1
+      }} viewport={{
+        once: true
+      }} transition={{
+        duration: 0.6
+      }} className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-primary">
             Sobre o Sr. Boteco
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden">
-              <img 
-                src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?q=80&w=1074" 
-                alt="Ambiente do Sr. Boteco" 
-                className="w-full h-64 object-cover"
-              />
+              <img alt="Ambiente do Sr. Boteco" className="w-full h-64 object-cover" src="/lovable-uploads/47050126-4846-4fa2-85e6-3546807c2c70.jpg" />
             </div>
             <div className="glass-card p-8 rounded-2xl">
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -34,8 +29,6 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default About;
