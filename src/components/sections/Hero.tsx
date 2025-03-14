@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } from "lucide-react";
@@ -10,7 +9,7 @@ const Hero = () => {
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundImage: 'url("/lovable-uploads/99a9d662-d88e-457f-9fd2-079efc52bc54.png")',
+          backgroundImage: 'url("/lovable-uploads/47050126-4846-4fa2-85e6-3546807c2c70.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           zIndex: 0
