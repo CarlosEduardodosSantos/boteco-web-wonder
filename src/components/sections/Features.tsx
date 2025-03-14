@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   Carousel,
@@ -9,12 +8,14 @@ import {
 } from "@/components/ui/carousel";
 
 const galleryImages = [
-  "/lovable-uploads/47050126-4846-4fa2-85e6-3546807c2c70.jpg",
-  "/lovable-uploads/920b2123-44de-422b-9591-51a46e30afe7.jpg",
-  "/lovable-uploads/1843bc8b-3185-4369-8a52-ca6eb3e7e0b0.png",
-  "/lovable-uploads/8434c7e0-9936-4a4d-a896-636756964310.png",
-  "/lovable-uploads/47050126-4846-4fa2-85e6-3546807c2c70.jpg",
-  "/lovable-uploads/920b2123-44de-422b-9591-51a46e30afe7.jpg",
+  "/lovable-uploads/d700c8c5-a5be-4e7a-ac8f-96849b9100d0.png",
+  "/lovable-uploads/296c9637-b5da-4281-918a-347c01f7f429.png",
+  "/lovable-uploads/c0295b9e-651c-496f-b846-e233ae37312a.png",
+  "/lovable-uploads/677e3fea-5703-48b3-b0bc-70294c07b57c.png",
+  "/lovable-uploads/03d48920-88a1-4d5f-a527-099277ae402f.png",
+  "/lovable-uploads/bd053290-004b-4cdc-a970-b80c14ef7e97.png",
+  "/lovable-uploads/9aaefa7a-0475-4145-a052-01ab0beadb8d.png",
+  "/lovable-uploads/8f625ed5-a1f3-4cb2-8429-581a5e42b39e.png"
 ];
 
 const Features = () => {
