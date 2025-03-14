@@ -1,13 +1,13 @@
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { Wine, Utensils, Beer, ExternalLink, Coffee, Pizza, CakeSlice } from "lucide-react";
+import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } from "lucide-react";
 
 const Hero = () => {
   return (
     <section className="min-h-screen bg-[#541c1c]/5 relative overflow-hidden">
       <div className="absolute inset-0 grid grid-cols-6 gap-8 p-12">
-        {[Wine, Utensils, Beer, Coffee, Pizza, CakeSlice].map((Icon, index) => (
+        {[Wine, Utensils, Beer, Coffee, CookingPot, CakeSlice].map((Icon, index) => (
           <motion.div
             key={index}
             style={{
