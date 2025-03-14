@@ -16,7 +16,7 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden">
-              <img alt="Ambiente do Sr. Boteco" className="w-full h-64 object-cover" src="/lovable-uploads/854977cf-7286-4b71-af8b-d309d1dc5c5c.jpg" />
+              <img alt="Ambiente do Sr. Boteco" className="w-full h-64 object-cover" src="/lovable-uploads/7e95a03b-d3a8-47be-b01d-b8df638d0870.png" />
             </div>
             <div className="glass-card p-8 rounded-2xl">
               <p className="text-lg text-gray-700 leading-relaxed">
