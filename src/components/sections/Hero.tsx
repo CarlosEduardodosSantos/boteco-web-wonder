@@ -15,7 +15,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-48 mb-12"
+            className="w-96 mb-12" // Increased width here
           >
             <Logo />
           </motion.div>
@@ -25,14 +25,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="font-rumble text-2xl md:text-4xl text-primary mb-6">
+            <h1 className="font-rumble text-xl md:text-3xl text-primary mb-4">
               Um novo conceito
-              <span className="font-berthold block mt-2 text-lg md:text-xl font-medium text-primary/80">
+              <span className="font-berthold block mt-2 text-base md:text-lg font-medium text-primary/80">
                 o mesmo sabor irresistível!
               </span>
             </h1>
             
-            <p className="font-canva text-lg text-primary/70 mb-8 max-w-2xl mx-auto">
+            <p className="font-canva text-base text-primary/70 mb-6 max-w-2xl mx-auto">
               Uma experiência única de boteco, onde a tradição se encontra com o conforto moderno.
               Venha conhecer nossos pratos e drinks especiais.
             </p>

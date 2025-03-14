@@ -28,12 +28,12 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-4xl font-bold text-[#541c1c] mb-4">
+          <h2 className="font-rumble text-2xl md:text-3xl text-[#541c1c] mb-4">
             Nossa Galeria
           </h2>
-          <p className="text-[#541c1c]/70 max-w-2xl mx-auto">
+          <p className="font-canva text-base text-[#541c1c]/70 max-w-2xl mx-auto">
             Momentos especiais capturados em nosso espaço
           </p>
         </motion.div>
