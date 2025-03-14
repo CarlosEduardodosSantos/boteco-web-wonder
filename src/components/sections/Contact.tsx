@@ -24,7 +24,7 @@ const contactInfo = [
 
 const Contact = () => {
   return (
-    <section className="py-20 relative bg-[#e6c7af]">
+    <section className="py-20 relative bg-gradient-to-b from-secondary/20 to-white">
       <div className="container mx-auto px-4">
         <h2 className="font-rumble text-2xl md:text-3xl text-center mb-8 text-primary">
           Visite-nos

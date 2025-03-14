@@ -14,7 +14,7 @@ const Hero = () => {
               key={`${index}-${i}`}
               initial={{ opacity: 0, rotate: 0 }}
               animate={{ 
-                opacity: 0.05,
+                opacity: 0.15,
                 rotate: 12,
                 y: [0, -10, 0],
               }}

@@ -21,7 +21,7 @@ const galleryImages = [
 
 const Features = () => {
   return (
-    <section className="py-20 relative overflow-hidden bg-[#e6c7af]">
+    <section className="py-20 relative overflow-hidden bg-[#541c1c]/5">
       <div className="container mx-auto px-4 relative">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
