@@ -7,31 +7,35 @@ import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } fro
 const Hero = () => {
   return (
     <section className="min-h-screen bg-[#541c1c]/5 relative overflow-hidden">
-      <div className="absolute inset-0 grid grid-cols-12 gap-8 p-12">
-        {[Wine, Utensils, Beer, Coffee, CookingPot, CakeSlice].map((Icon, index) => (
-          <motion.div
-            key={index}
-            style={{
-              gridColumn: `span ${Math.floor(Math.random() * 3) + 2}`,
-              marginTop: `${Math.random() * 8 - 4}rem`,
-              marginLeft: `${Math.random() * 4 - 2}rem`
-            }}
-            initial={{ opacity: 0, rotate: 0 }}
-            animate={{ 
-              opacity: 0.15,
-              rotate: Math.random() * 30 - 15,
-              y: [0, -10, 0],
-            }}
-            transition={{
-              duration: 3 + Math.random(),
-              repeat: Infinity,
-              repeatType: "reverse",
-              delay: index * 0.2
-            }}
-          >
-            <Icon className="w-12 h-12 text-primary" />
-          </motion.div>
-        ))}
+      <div className="absolute inset-0 grid grid-cols-12 gap-12 p-16">
+        {Array(12).fill(null).map((_, index) => {
+          const icons = [Wine, Utensils, Beer, Coffee, CookingPot, CakeSlice];
+          const Icon = icons[index % icons.length];
+          return (
+            <motion.div
+              key={index}
+              style={{
+                gridColumn: `span ${Math.floor(Math.random() * 2) + 1}`,
+                marginTop: `${Math.random() * 20 - 10}rem`,
+                marginLeft: `${Math.random() * 8 - 4}rem`
+              }}
+              initial={{ opacity: 0, rotate: 0 }}
+              animate={{ 
+                opacity: 0.15,
+                rotate: Math.random() * 30 - 15,
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 3 + Math.random(),
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: index * 0.2
+              }}
+            >
+              <Icon className="w-12 h-12 text-primary" />
+            </motion.div>
+          );
+        })}
       </div>
       
       <div className="container mx-auto px-4 relative">
