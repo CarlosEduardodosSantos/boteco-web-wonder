@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import {
   Carousel,
@@ -41,6 +42,9 @@ const Features = () => {
           opts={{
             align: "start",
             loop: true,
+            skipSnaps: false,
+            duration: 20,
+            dragFree: true,
           }}
           className="w-full"
         >
@@ -52,12 +56,13 @@ const Features = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
                   className="aspect-square overflow-hidden rounded-2xl"
                 >
                   <img
                     src={image}
                     alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-300"
                   />
                 </motion.div>
               </CarouselItem>

@@ -6,19 +6,19 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Endereço",
-    lines: ["Rua dos Botecos, 123", "São Paulo, SP"],
+    lines: ["Patio Limeira Shopping", "Limeira, SP"],
     animation: { x: -20 }
   },
   {
     icon: Clock,
     title: "Horário",
-    lines: ["Ter - Dom", "17:00 - 00:00"],
+    lines: ["Seg - Dom", "11:00 - 22:00"],
     animation: { y: 20 }
   },
   {
     icon: Phone,
     title: "Contato",
-    lines: ["(11) 99999-9999", "contato@srboteco.com"],
+    lines: ["(19) 99414-7021", "contato@srboteco.com"],
     animation: { x: 20 }
   }
 ];
