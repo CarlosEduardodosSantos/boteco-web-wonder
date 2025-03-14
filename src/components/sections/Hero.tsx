@@ -1,12 +1,10 @@
-
 import { motion } from "framer-motion";
-import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
 import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-[#541c1c]/5 relative overflow-hidden">
+    <section className="min-h-screen bg-[#541c1c]/5 relative overflow-hidden pt-20">
       <div className="absolute inset-0 grid grid-cols-12 gap-12 p-16">
         {Array(12).fill(null).map((_, index) => {
           const icons = [Wine, Utensils, Beer, Coffee, CookingPot, CakeSlice];
@@ -40,15 +38,6 @@ const Hero = () => {
       
       <div className="container mx-auto px-4 relative">
         <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto text-center">
-          <motion.div 
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="w-96 mb-12"
-          >
-            <Logo />
-          </motion.div>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
