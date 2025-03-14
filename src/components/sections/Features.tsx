@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { Award, Target, Clock, Users } from "lucide-react";
+import { Award, Target, Clock, Users, Beer } from "lucide-react";
 
 const stats = [
   {
@@ -16,10 +16,10 @@ const stats = [
     description: "Tradição e experiência em cada detalhe"
   },
   {
-    icon: Award,
-    value: "32",
-    label: "Prêmios Conquistados",
-    description: "Reconhecimento da crítica especializada"
+    icon: Beer,
+    value: "1000L+",
+    label: "Chopp Servido",
+    description: "O melhor chopp artesanal da cidade"
   },
   {
     icon: Target,
