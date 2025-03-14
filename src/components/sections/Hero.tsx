@@ -6,10 +6,7 @@ const Hero = () => {
   return (
     <section className="min-h-screen relative overflow-hidden pt-20">
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: `url('/lovable-uploads/99a9d662-d88e-457f-9fd2-079efc52bc54.png')`
-        }}
+        className="absolute inset-0 z-0 bg-[url('/lovable-uploads/99a9d662-d88e-457f-9fd2-079efc52bc54.png')] bg-cover bg-center bg-no-repeat"
       >
         <div className="absolute inset-0 bg-black/50" />
       </div>
