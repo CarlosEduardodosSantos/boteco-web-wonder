@@ -8,7 +8,7 @@ const Hero = () => {
       <div 
         className="absolute inset-0 z-0"
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL || ''}/lovable-uploads/99a9d662-d88e-457f-9fd2-079efc52bc54.png)`,
+          backgroundImage: "url('/lovable-uploads/99a9d662-d88e-457f-9fd2-079efc52bc54.png')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -109,4 +109,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
