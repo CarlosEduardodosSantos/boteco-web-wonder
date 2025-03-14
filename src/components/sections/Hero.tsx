@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
@@ -15,7 +14,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-96 mb-12" // Increased width here
+            className="w-96 mb-12"
           >
             <Logo />
           </motion.div>
@@ -38,20 +37,18 @@ const Hero = () => {
             </p>
 
             <div className="flex justify-center">
-              <Button
-                asChild
-                className="bg-primary hover:bg-primary/90 text-white px-8"
+              <a 
+                href="https://shop.beetech.com.br/srboteco/" 
+                target="_blank" 
+                rel="noopener noreferrer"
               >
-                <a 
-                  href="https://shop.beetech.com.br/srboteco/" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2"
+                <Button 
+                  className="bg-primary hover:bg-primary/90 text-white px-8 flex items-center gap-2"
                 >
                   Ver Cardápio
                   <ExternalLink className="w-4 h-4" />
-                </a>
-              </Button>
+                </Button>
+              </a>
             </div>
 
             <motion.div 
