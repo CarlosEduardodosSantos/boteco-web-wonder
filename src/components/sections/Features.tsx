@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   Carousel,
@@ -7,6 +6,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const galleryImages = [
   "/lovable-uploads/d700c8c5-a5be-4e7a-ac8f-96849b9100d0.png",
@@ -46,6 +46,13 @@ const Features = () => {
             duration: 20,
             dragFree: true,
           }}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+              stopOnInteraction: true,
+              stopOnMouseEnter: true,
+            }),
+          ]}
           className="w-full"
         >
           <CarouselContent className="-ml-2 md:-ml-4">
