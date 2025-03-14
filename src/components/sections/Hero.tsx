@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } from "lucide-react";
@@ -7,11 +6,12 @@ const Hero = () => {
   return (
     <section className="min-h-screen relative overflow-hidden pt-20">
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center"
+        className="absolute inset-0 z-0"
         style={{
           backgroundImage: "url('/lovable-uploads/47050126-4846-4fa2-85e6-3546807c2c70.jpg')",
           backgroundSize: 'cover',
-          backgroundPosition: 'center'
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
