@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -19,6 +18,11 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        berthold: ['Berthold', 'sans-serif'],
+        canva: ['Canva Sans', 'sans-serif'],
+        rumble: ['Rumble Brave', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

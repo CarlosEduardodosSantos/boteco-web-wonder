@@ -1,3 +1,30 @@
+@font-face {
+  font-family: 'Berthold';
+  src: url('/fonts/Berthold.woff2') format('woff2'),
+       url('/fonts/Berthold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Canva Sans';
+  src: url('/fonts/CanvaSans-Regular.woff2') format('woff2'),
+       url('/fonts/CanvaSans-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Rumble Brave';
+  src: url('/fonts/RumbleBrave.woff2') format('woff2'),
+       url('/fonts/RumbleBrave.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
