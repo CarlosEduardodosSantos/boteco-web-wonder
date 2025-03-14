@@ -4,8 +4,19 @@ import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } fro
 
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-[#541c1c]/5 relative overflow-hidden pt-20">
-      <div className="absolute inset-0 grid grid-cols-12 gap-12 p-16">
+    <section className="min-h-screen relative overflow-hidden pt-20">
+      <div 
+        className="absolute inset-0 z-0" 
+        style={{
+          backgroundImage: "url('/lovable-uploads/7ab6565c-33ee-4bfb-9a03-d3b89ecf8a68.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
+
+      <div className="absolute inset-0 grid grid-cols-12 gap-12 p-16 z-10">
         {Array(12).fill(null).map((_, index) => {
           const icons = [Wine, Utensils, Beer, Coffee, CookingPot, CakeSlice];
           const Icon = icons[index % icons.length];
@@ -36,21 +47,21 @@ const Hero = () => {
         })}
       </div>
       
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative z-20">
         <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="font-rumble text-xl md:text-3xl text-primary mb-4">
+            <h1 className="font-rumble text-xl md:text-3xl text-white mb-4">
               Um novo conceito
-              <span className="font-berthold block mt-2 text-base md:text-lg font-medium text-primary/80">
+              <span className="font-berthold block mt-2 text-base md:text-lg font-medium text-white/80">
                 o mesmo sabor irresistível!
               </span>
             </h1>
             
-            <p className="font-canva text-base text-primary/70 mb-6 max-w-2xl mx-auto">
+            <p className="font-canva text-base text-white/70 mb-6 max-w-2xl mx-auto">
               Uma experiência única de boteco, onde a tradição se encontra com o conforto moderno.
               Venha conhecer nossos pratos e drinks especiais.
             </p>
@@ -77,16 +88,16 @@ const Hero = () => {
               className="flex gap-8 mt-12 justify-center"
             >
               <div className="flex items-center gap-2">
-                <Wine className="w-5 h-5 text-primary" />
-                <span className="text-sm text-primary/80">Drinks Especiais</span>
+                <Wine className="w-5 h-5 text-white" />
+                <span className="text-sm text-white/80">Drinks Especiais</span>
               </div>
               <div className="flex items-center gap-2">
-                <Utensils className="w-5 h-5 text-primary" />
-                <span className="text-sm text-primary/80">Petiscos</span>
+                <Utensils className="w-5 h-5 text-white" />
+                <span className="text-sm text-white/80">Petiscos</span>
               </div>
               <div className="flex items-center gap-2">
-                <Beer className="w-5 h-5 text-primary" />
-                <span className="text-sm text-primary/80">Chopp Gelado</span>
+                <Beer className="w-5 h-5 text-white" />
+                <span className="text-sm text-white/80">Chopp Gelado</span>
               </div>
             </motion.div>
           </motion.div>
