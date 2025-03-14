@@ -24,10 +24,10 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="text-3xl md:text-5xl font-bold text-primary mb-6">
-              Tradição & Sabor
-              <span className="block mt-2 text-xl md:text-2xl font-medium text-primary/80">
-                no coração da cidade
+            <h1 className="text-2xl md:text-4xl font-bold text-primary mb-6">
+              Um novo conceito
+              <span className="block mt-2 text-lg md:text-xl font-medium text-primary/80">
+                o mesmo sabor irresistível!
               </span>
             </h1>
             
@@ -61,7 +61,7 @@ const Hero = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Beer className="w-5 h-5 text-primary" />
-                <span className="text-sm text-primary/80">Chopp Artesanal</span>
+                <span className="text-sm text-primary/80">Chopp Gelado</span>
               </div>
             </motion.div>
           </motion.div>
