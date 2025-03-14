@@ -1,6 +1,6 @@
 
 import { motion } from "framer-motion";
-import { MapPin, Clock, Phone } from "lucide-react";
+import { MapPin, Clock, Phone, Instagram, Facebook } from "lucide-react";
 
 const contactInfo = [
   {
@@ -53,6 +53,31 @@ const Contact = () => {
             );
           })}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center gap-6 mt-12"
+        >
+          <a 
+            href="https://www.instagram.com/srbotecopatiolimeira/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-primary text-white hover:bg-primary/80 transition-colors"
+          >
+            <Instagram className="w-6 h-6" />
+          </a>
+          <a 
+            href="https://www.facebook.com/profile.php?id=61565552648174" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="p-3 rounded-full bg-primary text-white hover:bg-primary/80 transition-colors"
+          >
+            <Facebook className="w-6 h-6" />
+          </a>
+        </motion.div>
       </div>
     </section>
   );
