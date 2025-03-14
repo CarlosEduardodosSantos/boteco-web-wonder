@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Wine, Beer, Utensils } from "lucide-react";
 
@@ -26,7 +27,7 @@ const Gallery = () => {
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center mb-12 text-primary">
+        <h2 className="font-rumble text-2xl md:text-3xl text-center mb-8 text-primary">
           Nossa Experiência
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
