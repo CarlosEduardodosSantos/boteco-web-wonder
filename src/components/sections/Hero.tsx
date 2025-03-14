@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
@@ -6,13 +7,26 @@ import { Wine, Utensils, Beer, ExternalLink, Coffee, Pizza, CakeSlice } from "lu
 const Hero = () => {
   return (
     <section className="min-h-screen bg-[#e6c7af] relative overflow-hidden">
-      <div className="absolute inset-0 grid grid-cols-6 gap-8 p-8">
+      <div className="absolute inset-0 grid grid-cols-4 gap-16 p-12">
         {[Wine, Utensils, Beer, Coffee, Pizza, CakeSlice].map((Icon, index) => (
-          Array.from({ length: 4 }).map((_, i) => (
-            <Icon
+          Array.from({ length: 2 }).map((_, i) => (
+            <motion.div
               key={`${index}-${i}`}
-              className="w-8 h-8 text-primary/5 transform rotate-12"
-            />
+              initial={{ opacity: 0, rotate: 0 }}
+              animate={{ 
+                opacity: 0.05,
+                rotate: 12,
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: index * 0.2
+              }}
+            >
+              <Icon className="w-12 h-12 text-primary" />
+            </motion.div>
           ))
         ))}
       </div>
