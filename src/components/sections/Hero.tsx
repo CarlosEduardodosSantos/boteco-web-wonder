@@ -1,8 +1,7 @@
-
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { Wine, Utensils, Coffee } from "lucide-react";
+import { Wine, Utensils, Beer } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -68,8 +67,8 @@ const Hero = () => {
                 <span className="text-sm text-primary/80">Petiscos</span>
               </div>
               <div className="flex items-center gap-2">
-                <Coffee className="w-5 h-5 text-primary" />
-                <span className="text-sm text-primary/80">Café Colonial</span>
+                <Beer className="w-5 h-5 text-primary" />
+                <span className="text-sm text-primary/80">Chopp Artesanal</span>
               </div>
             </motion.div>
           </motion.div>
