@@ -43,7 +43,7 @@ const Hero = () => {
                 className="bg-primary hover:bg-primary/90 text-white px-8"
               >
                 <a 
-                  href="https://menu.srboteco.com.br" 
+                  href="https://shop.beetech.com.br/srboteco/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-2"
