@@ -1,14 +1,23 @@
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { Wine, Utensils, Beer, ExternalLink } from "lucide-react";
+import { Wine, Utensils, Beer, ExternalLink, Coffee, Pizza, CakeSlice } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-b from-secondary/10 to-white relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIGZpbGw9IiM1NDFjMWMiIGZpbGwtb3BhY2l0eT0iLjA1IiBjeD0iMzAiIGN5PSIzMCIgcj0iMiIvPjwvZz48L3N2Zz4=')] opacity-30" />
+    <section className="min-h-screen bg-[#e6c7af] relative overflow-hidden">
+      <div className="absolute inset-0 grid grid-cols-6 gap-8 p-8">
+        {[Wine, Utensils, Beer, Coffee, Pizza, CakeSlice].map((Icon, index) => (
+          Array.from({ length: 4 }).map((_, i) => (
+            <Icon
+              key={`${index}-${i}`}
+              className="w-8 h-8 text-primary/5 transform rotate-12"
+            />
+          ))
+        ))}
+      </div>
       
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
         <div className="flex flex-col items-center justify-center min-h-screen max-w-3xl mx-auto text-center">
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
