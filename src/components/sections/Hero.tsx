@@ -14,7 +14,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="w-32 mb-12"
+            className="w-48 mb-12"
           >
             <Logo />
           </motion.div>
@@ -24,9 +24,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-primary mb-6">
+            <h1 className="text-3xl md:text-5xl font-bold text-primary mb-6">
               Tradição & Sabor
-              <span className="block mt-2 text-2xl md:text-3xl font-medium text-primary/80">
+              <span className="block mt-2 text-xl md:text-2xl font-medium text-primary/80">
                 no coração da cidade
               </span>
             </h1>
@@ -36,19 +36,12 @@ const Hero = () => {
               Venha conhecer nossos pratos e drinks especiais.
             </p>
 
-            <div className="flex gap-4 items-center justify-center">
+            <div className="flex justify-center">
               <Button
                 asChild
                 className="bg-primary hover:bg-primary/90 text-white px-8"
               >
                 <a href="#menu">Ver Cardápio</a>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/10"
-              >
-                <a href="#contact">Fazer Reserva</a>
               </Button>
             </div>
 

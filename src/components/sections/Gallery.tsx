@@ -1,25 +1,25 @@
 
 import { motion } from "framer-motion";
-import { Wine, Coffee, Utensils } from "lucide-react";
+import { Wine, Beer, Utensils } from "lucide-react";
 
 const features = [
   {
     title: "Ambiente Acolhedor",
     description: "Um espaço pensado para seu conforto e bem-estar",
     icon: Wine,
-    gradient: "from-[#fdfcfb] to-[#e2d1c3]"
+    gradient: "from-[#541c1c] to-[#541c1c]/80"
   },
   {
     title: "Drinks Especiais",
     description: "Bebidas artesanais preparadas com maestria",
-    icon: Coffee,
-    gradient: "from-[#ee9ca7] to-[#ffdde1]"
+    icon: Beer,
+    gradient: "from-[#e6c7af] to-[#e6c7af]/80"
   },
   {
     title: "Petiscos Tradicionais",
     description: "Sabor e tradição em cada mordida",
     icon: Utensils,
-    gradient: "from-[#accbee] to-[#e7f0fd]"
+    gradient: "from-[#f4b702] to-[#f4b702]/80"
   }
 ];
 
@@ -44,10 +44,10 @@ const Gallery = () => {
               >
                 <div className="flex flex-col items-center text-center">
                   <div className="p-4 rounded-full bg-white/30 backdrop-blur-sm mb-6 group-hover:scale-110 transition-transform">
-                    <Icon className="w-8 h-8 text-primary" />
+                    <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{feature.title}</h3>
-                  <p className="text-primary/70">{feature.description}</p>
+                  <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-white/90">{feature.description}</p>
                 </div>
               </motion.div>
             );
