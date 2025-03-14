@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
@@ -6,22 +7,23 @@ import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } fro
 const Hero = () => {
   return (
     <section className="min-h-screen bg-[#541c1c]/5 relative overflow-hidden">
-      <div className="absolute inset-0 grid grid-cols-6 gap-8 p-12">
+      <div className="absolute inset-0 grid grid-cols-12 gap-8 p-12">
         {[Wine, Utensils, Beer, Coffee, CookingPot, CakeSlice].map((Icon, index) => (
           <motion.div
             key={index}
             style={{
-              marginTop: index % 2 === 0 ? '2rem' : '-2rem',
-              marginLeft: index % 3 === 0 ? '1rem' : '-1rem'
+              gridColumn: `span ${Math.floor(Math.random() * 3) + 2}`,
+              marginTop: `${Math.random() * 8 - 4}rem`,
+              marginLeft: `${Math.random() * 4 - 2}rem`
             }}
             initial={{ opacity: 0, rotate: 0 }}
             animate={{ 
               opacity: 0.15,
-              rotate: 12,
+              rotate: Math.random() * 30 - 15,
               y: [0, -10, 0],
             }}
             transition={{
-              duration: 3,
+              duration: 3 + Math.random(),
               repeat: Infinity,
               repeatType: "reverse",
               delay: index * 0.2
