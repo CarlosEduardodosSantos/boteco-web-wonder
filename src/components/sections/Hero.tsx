@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
-import { Wine, Utensils, Beer } from "lucide-react";
+import { Wine, Utensils, Beer, ExternalLink } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -42,7 +42,15 @@ const Hero = () => {
                 asChild
                 className="bg-primary hover:bg-primary/90 text-white px-8"
               >
-                <a href="#menu">Ver Cardápio</a>
+                <a 
+                  href="https://shop.beetech.com.br/srboteco/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2"
+                >
+                  Ver Cardápio
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </Button>
             </div>
 
