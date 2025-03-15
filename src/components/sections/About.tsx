@@ -1,4 +1,6 @@
+
 import { motion } from "framer-motion";
+
 const About = () => {
   return <section className="py-20 relative bg-white">
       <div className="container mx-auto px-4">
@@ -16,7 +18,13 @@ const About = () => {
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="rounded-2xl overflow-hidden">
-              <img alt="Ambiente do Sr. Boteco" className="w-full h-64 object-cover" src="/lovable-uploads/7e95a03b-d3a8-47be-b01d-b8df638d0870.png" />
+              <img 
+                alt="Ambiente do Sr. Boteco" 
+                className="w-full h-64 object-cover" 
+                src="/lovable-uploads/7e95a03b-d3a8-47be-b01d-b8df638d0870.png"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="glass-card p-8 rounded-2xl">
               <p className="text-lg text-gray-700 leading-relaxed">
@@ -31,4 +39,5 @@ const About = () => {
       </div>
     </section>;
 };
+
 export default About;

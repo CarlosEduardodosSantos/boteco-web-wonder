@@ -11,9 +11,11 @@ const Logo = () => {
     >
       <motion.img
         alt="Sr. Boteco Logo"
-        className="w-[300px] h-auto drop-shadow-lg" // Increased size here
+        className="w-[300px] h-auto drop-shadow-lg"
         style={{ filter: 'contrast(1.1) brightness(1.05)' }}
         src="/lovable-uploads/8434c7e0-9936-4a4d-a896-636756964310.png"
+        loading="eager"
+        fetchPriority="high"
       />
     </motion.div>
   );

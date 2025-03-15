@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } from "lucide-react";
@@ -14,6 +15,8 @@ const Hero = () => {
           backgroundPosition: 'center',
           zIndex: 0
         }}
+        role="img"
+        aria-label="Background do Sr. Boteco"
       >
         <div className="absolute inset-0 bg-black/50" />
       </div>

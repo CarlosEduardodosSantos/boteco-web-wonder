@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import {
   Carousel,
@@ -70,6 +71,8 @@ const Features = () => {
                     src={image}
                     alt={`Gallery image ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-300"
+                    loading="lazy"
+                    decoding="async"
                   />
                 </motion.div>
               </CarouselItem>
