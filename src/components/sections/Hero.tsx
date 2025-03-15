@@ -1,10 +1,20 @@
+
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Wine, Utensils, Beer, ExternalLink, Coffee, CookingPot, CakeSlice } from "lucide-react";
+import { Wine, Utensils, Beer, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const Hero = () => {
+  const [bgImageLoaded, setBgImageLoaded] = useState(false);
+
   return (
     <section className="min-h-screen relative overflow-hidden pt-20">
+      {!bgImageLoaded && (
+        <div className="absolute inset-0 bg-black">
+          <Skeleton className="w-full h-full" />
+        </div>
+      )}
       <div 
         style={{
           position: 'absolute',
@@ -12,7 +22,9 @@ const Hero = () => {
           backgroundImage: 'url("/lovable-uploads/47050126-4846-4fa2-85e6-3546807c2c70.jpg")',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          zIndex: 0
+          zIndex: 0,
+          opacity: bgImageLoaded ? 1 : 0,
+          transition: 'opacity 0.3s ease-in-out'
         }}
         role="img"
         aria-label="Background do Sr. Boteco"
@@ -76,6 +88,17 @@ const Hero = () => {
           </motion.div>
         </div>
       </div>
+
+      <img 
+        src="/lovable-uploads/47050126-4846-4fa2-85e6-3546807c2c70.jpg"
+        alt="Background do Sr. Boteco"
+        onLoad={() => setBgImageLoaded(true)}
+        className="hidden"
+        width={1920}
+        height={1080}
+        fetchPriority="high"
+        decoding="async"
+      />
     </section>
   );
 };
