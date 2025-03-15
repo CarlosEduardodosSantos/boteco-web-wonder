@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -9,14 +10,14 @@ const About = () => {
     <section className="py-20 relative bg-white">
       <div className="container mx-auto px-4">
         <motion.div initial={{
-        opacity: 0
-      }} whileInView={{
-        opacity: 1
-      }} viewport={{
-        once: true
-      }} transition={{
-        duration: 0.6
-      }} className="max-w-4xl mx-auto">
+          opacity: 0
+        }} whileInView={{
+          opacity: 1
+        }} viewport={{
+          once: true
+        }} transition={{
+          duration: 0.6
+        }} className="max-w-4xl mx-auto">
           <h2 className="font-rumble text-2xl md:text-3xl text-center mb-8 text-primary">
             Sobre o Sr. Boteco
           </h2>
@@ -34,6 +35,9 @@ const About = () => {
                 loading="lazy"
                 decoding="async"
                 onLoad={() => setImageLoaded(true)}
+                width={600}
+                height={400}
+                fetchPriority="high"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>

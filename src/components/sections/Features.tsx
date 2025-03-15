@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import {
   Carousel,
@@ -87,6 +86,9 @@ const Features = () => {
                     loading="lazy"
                     decoding="async"
                     onLoad={() => handleImageLoad(image)}
+                    width={400}
+                    height={400}
+                    fetchPriority={index < 2 ? "high" : "low"}
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </motion.div>

@@ -16,6 +16,9 @@ const Logo = () => {
         src="/lovable-uploads/8434c7e0-9936-4a4d-a896-636756964310.png"
         loading="eager"
         fetchPriority="high"
+        decoding="async"
+        width={200}
+        height={80}
       />
     </motion.div>
   );
