@@ -1,8 +1,12 @@
-
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { Skeleton } from "@/components/ui/skeleton";
 
 const About = () => {
-  return <section className="py-20 relative bg-white">
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <section className="py-20 relative bg-white">
       <div className="container mx-auto px-4">
         <motion.div initial={{
         opacity: 0
@@ -17,13 +21,20 @@ const About = () => {
             Sobre o Sr. Boteco
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="rounded-2xl overflow-hidden">
+            <div className="rounded-2xl overflow-hidden relative">
+              {!imageLoaded && (
+                <Skeleton className="w-full h-64 absolute inset-0" />
+              )}
               <img 
                 alt="Ambiente do Sr. Boteco" 
-                className="w-full h-64 object-cover" 
+                className={`w-full h-64 object-cover transition-opacity duration-300 ${
+                  imageLoaded ? 'opacity-100' : 'opacity-0'
+                }`}
                 src="/lovable-uploads/7e95a03b-d3a8-47be-b01d-b8df638d0870.png"
                 loading="lazy"
                 decoding="async"
+                onLoad={() => setImageLoaded(true)}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
             <div className="glass-card p-8 rounded-2xl">
@@ -37,7 +48,8 @@ const About = () => {
           </div>
         </motion.div>
       </div>
-    </section>;
+    </section>
+  );
 };
 
 export default About;

@@ -8,6 +8,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { Skeleton } from "@/components/ui/skeleton";
+import { useState } from "react";
 
 const galleryImages = [
   "/lovable-uploads/d700c8c5-a5be-4e7a-ac8f-96849b9100d0.png",
@@ -21,6 +23,12 @@ const galleryImages = [
 ];
 
 const Features = () => {
+  const [loadedImages, setLoadedImages] = useState<{[key: string]: boolean}>({});
+
+  const handleImageLoad = (image: string) => {
+    setLoadedImages(prev => ({...prev, [image]: true}));
+  };
+
   return (
     <section className="py-20 relative overflow-hidden bg-[#541c1c]/5">
       <div className="container mx-auto px-4 relative">
@@ -65,14 +73,21 @@ const Features = () => {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.05 }}
-                  className="aspect-square overflow-hidden rounded-2xl"
+                  className="aspect-square overflow-hidden rounded-2xl relative"
                 >
+                  {!loadedImages[image] && (
+                    <Skeleton className="w-full h-full absolute inset-0" />
+                  )}
                   <img
                     src={image}
                     alt={`Gallery image ${index + 1}`}
-                    className="w-full h-full object-cover transition-transform duration-300"
+                    className={`w-full h-full object-cover transition-all duration-300 ${
+                      loadedImages[image] ? 'opacity-100' : 'opacity-0'
+                    }`}
                     loading="lazy"
                     decoding="async"
+                    onLoad={() => handleImageLoad(image)}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </motion.div>
               </CarouselItem>
