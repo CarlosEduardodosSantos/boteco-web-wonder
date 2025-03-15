@@ -1,4 +1,3 @@
-
 import { motion } from "framer-motion";
 import { NavigationMenu, NavigationMenuItem, NavigationMenuLink, NavigationMenuList } from "@/components/ui/navigation-menu";
 import Logo from "@/components/Logo";
@@ -10,14 +9,13 @@ const Header = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur
-    -sm shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           <motion.div 
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="w-32 md:w-48 flex items-center"
+            className="h-full w-24 md:w-36 flex items-center justify-center"
           >
             <Logo />
           </motion.div>
