@@ -1,11 +1,12 @@
 
-import { MapPin, Clock, Phone } from "lucide-react";
 import Header from "@/components/Header";
 import Hero from "@/components/sections/Hero";
 import About from "@/components/sections/About";
 import Features from "@/components/sections/Features";
 import Gallery from "@/components/sections/Gallery";
 import Contact from "@/components/sections/Contact";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
@@ -29,6 +30,8 @@ const Index = () => {
           <Contact />
         </section>
       </main>
+      <Footer />
+      <WhatsAppButton />
     </div>
   );
 };
