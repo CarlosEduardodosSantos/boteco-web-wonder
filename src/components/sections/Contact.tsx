@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import { MapPin, Clock, Phone, Instagram, Facebook } from "lucide-react";
 
@@ -6,7 +7,8 @@ const contactInfo = [
     icon: MapPin,
     title: "Endereço",
     lines: ["Patio Limeira Shopping", "Limeira, SP"],
-    animation: { x: -20 }
+    animation: { x: -20 },
+    link: "https://www.google.com/maps/search/botequim+limeira/@-22.5710946,-47.407698,13z?entry=s&sa=X"
   },
   {
     icon: Clock,
@@ -32,15 +34,8 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
           {contactInfo.map((info, index) => {
             const Icon = info.icon;
-            return (
-              <motion.div
-                key={info.title}
-                initial={{ opacity: 0, ...info.animation }}
-                whileInView={{ opacity: 1, x: 0, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform"
-              >
+            const CardContent = () => (
+              <>
                 <Icon className="w-8 h-8 text-primary mx-auto mb-4" />
                 <h3 className="text-lg font-semibold mb-2">{info.title}</h3>
                 <div className="text-gray-600">
@@ -48,6 +43,31 @@ const Contact = () => {
                     <p key={i}>{line}</p>
                   ))}
                 </div>
+              </>
+            );
+            
+            return (
+              <motion.div
+                key={info.title}
+                initial={{ opacity: 0, ...info.animation }}
+                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className={`glass-card p-6 rounded-xl text-center hover:scale-105 transition-transform ${info.link ? 'cursor-pointer' : ''}`}
+              >
+                {info.link ? (
+                  <a 
+                    href={info.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block h-full"
+                    aria-label={`Ver ${info.title} no Google Maps`}
+                  >
+                    <CardContent />
+                  </a>
+                ) : (
+                  <CardContent />
+                )}
               </motion.div>
             );
           })}
