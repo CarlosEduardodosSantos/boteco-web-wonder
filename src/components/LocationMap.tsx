@@ -2,13 +2,18 @@
 import { MapPin } from 'lucide-react';
 import { Button } from './ui/button';
 import { useEffect, useState } from 'react';
+import { Skeleton } from './ui/skeleton';
 
 const LocationMap = () => {
-  const [mapLoaded, setMapLoaded] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   
   useEffect(() => {
-    // Force re-render to ensure map appears
-    setMapLoaded(true);
+    // Set a timeout to make sure the image has time to load
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+    
+    return () => clearTimeout(timer);
   }, []);
 
   const handleMapClick = () => {
@@ -17,22 +22,20 @@ const LocationMap = () => {
 
   return (
     <div className="relative w-full h-64 overflow-hidden rounded-lg shadow-md border border-gray-200">
-      {/* Show placeholder while map loads */}
-      {!mapLoaded && (
+      {/* Show loading skeleton */}
+      {isLoading && (
         <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
           <MapPin className="animate-pulse text-primary" size={32} />
+          <Skeleton className="absolute inset-0 z-0" />
         </div>
       )}
       
-      {/* Actual map image */}
+      {/* Map container */}
       <div 
         className="w-full h-full bg-cover bg-center cursor-pointer"
-        style={{ 
+        style={{
           backgroundImage: `url('https://maps.googleapis.com/maps/api/staticmap?center=-22.5719,-47.4089&zoom=16&size=600x300&scale=2&maptype=roadmap&markers=color:red%7C-22.5719,-47.4089&key=AIzaSyC2HIpir5XeUZX8UBtdR7F0t8vJUvLHq-A')`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          opacity: mapLoaded ? 1 : 0,
-          transition: 'opacity 0.3s ease-in-out'
+          display: isLoading ? 'none' : 'block'
         }}
         onClick={handleMapClick}
         role="button"
@@ -40,6 +43,16 @@ const LocationMap = () => {
       >
         <div className="absolute inset-0 bg-primary/5"></div>
       </div>
+      
+      {/* Add an actual img element as fallback */}
+      {!isLoading && (
+        <img 
+          src="https://maps.googleapis.com/maps/api/staticmap?center=-22.5719,-47.4089&zoom=16&size=600x300&scale=2&maptype=roadmap&markers=color:red%7C-22.5719,-47.4089&key=AIzaSyC2HIpir5XeUZX8UBtdR7F0t8vJUvLHq-A"
+          alt="Localização no mapa"
+          className="absolute inset-0 w-full h-full object-cover"
+          onError={() => console.error("Failed to load map image")}
+        />
+      )}
       
       <Button 
         variant="secondary"
