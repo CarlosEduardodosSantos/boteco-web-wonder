@@ -1,6 +1,6 @@
 
 import { motion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
+import { ExternalLink, MapPin } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -15,11 +15,18 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <img 
-              src="/lovable-uploads/8434c7e0-9936-4a4d-a896-636756964310.png" 
-              alt="Sr. Boteco Logo" 
-              className="w-28 h-28 object-contain"
-            />
+            <a 
+              href="https://www.google.com/maps/search/botequim+limeira/@-22.5710946,-47.407698,13z?entry=s&sa=X"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Localização no Google Maps"
+            >
+              <img 
+                src="/lovable-uploads/8434c7e0-9936-4a4d-a896-636756964310.png" 
+                alt="Sr. Boteco Logo" 
+                className="w-28 h-28 object-contain hover:opacity-90 transition-opacity"
+              />
+            </a>
           </motion.div>
           
           <motion.div 
@@ -30,7 +37,16 @@ const Footer = () => {
             className="text-center"
           >
             <p className="text-gray-500 text-sm">
-              © {currentYear} Sr. Boteco. Todos os direitos reservados.
+              © {currentYear} Sr. Boteco. 
+              <a 
+                href="https://www.google.com/maps/search/botequim+limeira/@-22.5710946,-47.407698,13z?entry=s&sa=X"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary/80 ml-1 inline-flex items-center gap-1 transition-colors"
+              >
+                <MapPin className="h-3 w-3" />
+                Patio Limeira Shopping
+              </a>
             </p>
             <div className="mt-3 flex items-center justify-center">
               <p className="text-xs text-gray-400">
