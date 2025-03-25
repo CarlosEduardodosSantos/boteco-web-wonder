@@ -1,27 +1,46 @@
 
 import { MapPin } from 'lucide-react';
 import { Button } from './ui/button';
+import { useEffect, useState } from 'react';
 
 const LocationMap = () => {
+  const [mapLoaded, setMapLoaded] = useState(false);
+  
+  useEffect(() => {
+    // Force re-render to ensure map appears
+    setMapLoaded(true);
+  }, []);
+
   const handleMapClick = () => {
     window.open('https://www.google.com/maps/place/Pátio+Limeira+Shopping/data=!4m2!3m1!1s0x0:0x2e15d3d2be7fe64f?sa=X&ved=1t:2428&ictx=111', '_blank');
   };
 
   return (
-    <div className="relative w-full h-48 overflow-hidden rounded-lg shadow-md">
+    <div className="relative w-full h-64 overflow-hidden rounded-lg shadow-md border border-gray-200">
+      {/* Show placeholder while map loads */}
+      {!mapLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <MapPin className="animate-pulse text-primary" size={32} />
+        </div>
+      )}
+      
+      {/* Actual map image */}
       <div 
         className="w-full h-full bg-cover bg-center cursor-pointer"
         style={{ 
-          backgroundImage: `url('https://maps.googleapis.com/maps/api/staticmap?center=Patio+Limeira+Shopping&zoom=15&size=600x300&scale=2&maptype=roadmap&markers=color:red%7CPatio+Limeira+Shopping&key=AIzaSyC2HIpir5XeUZX8UBtdR7F0t8vJUvLHq-A')`,
+          backgroundImage: `url('https://maps.googleapis.com/maps/api/staticmap?center=-22.5719,-47.4089&zoom=16&size=600x300&scale=2&maptype=roadmap&markers=color:red%7C-22.5719,-47.4089&key=AIzaSyC2HIpir5XeUZX8UBtdR7F0t8vJUvLHq-A')`,
           backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          opacity: mapLoaded ? 1 : 0,
+          transition: 'opacity 0.3s ease-in-out'
         }}
         onClick={handleMapClick}
         role="button"
         aria-label="Ver localização no Google Maps"
       >
-        <div className="absolute inset-0 bg-primary/10"></div>
+        <div className="absolute inset-0 bg-primary/5"></div>
       </div>
+      
       <Button 
         variant="secondary"
         onClick={handleMapClick}

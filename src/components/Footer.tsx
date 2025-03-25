@@ -38,7 +38,9 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-            <LocationMap />
+            <div className="mt-4 w-full">
+              <LocationMap />
+            </div>
           </motion.div>
           
           <motion.div 
