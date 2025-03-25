@@ -10,10 +10,10 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen flex flex-col">
       <div className="absolute inset-0 hero-pattern" />
       <Header />
-      <main>
+      <main className="flex-grow">
         <section id="home">
           <Hero />
         </section>
