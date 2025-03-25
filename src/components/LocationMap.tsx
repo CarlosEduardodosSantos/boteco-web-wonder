@@ -11,7 +11,12 @@ const LocationMap = () => {
     <div className="relative w-full h-48 overflow-hidden rounded-lg shadow-md">
       <div 
         className="w-full h-full bg-cover bg-center cursor-pointer"
-        style={{ backgroundImage: `url('https://maps.googleapis.com/maps/api/staticmap?center=Patio+Limeira+Shopping&zoom=15&size=400x200&maptype=roadmap&markers=color:red%7CPatio+Limeira+Shopping&key=AIzaSyC2HIpir5XeUZX8UBtdR7F0t8vJUvLHq-A')` }}
+        style={{ 
+          backgroundImage: `url('https://maps.googleapis.com/maps/api/staticmap?center=Patio+Limeira+Shopping&zoom=15&size=600x300&scale=2&maptype=roadmap&markers=color:red%7CPatio+Limeira+Shopping&key=AIzaSyC2HIpir5XeUZX8UBtdR7F0t8vJUvLHq-A')`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat'
+        }}
+        onClick={handleMapClick}
         role="button"
         aria-label="Ver localização no Google Maps"
       >
