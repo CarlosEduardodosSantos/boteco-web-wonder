@@ -3,7 +3,7 @@ import { MapPin } from 'lucide-react';
 
 const LocationMap = () => {
   const handleMapClick = () => {
-    window.open('https://maps.app.goo.gl/1TzJWQp5iVDH5dud7', '_blank');
+    window.open('https://www.google.com/maps/place/Pátio+Limeira+Shopping/data=!4m2!3m1!1s0x0:0x2e15d3d2be7fe64f?sa=X&ved=1t:2428&ictx=111', '_blank');
   };
 
   return (
